@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bochitos || fans</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .container{
+            text-align: center;
+        }
+        .opciones{
+            background-color: rgb(183, 0, 91);
+            width: 500px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img id="cambiar-bocho" src="bocho_rojo.jpg" alt="">
+        <div class="opciones">
+            <select id="colorSelect" onchange="cambiarColorA(this.value)">
+                <option value="rojo">rojo 1</option>
+               
+            </select>
+        </div>
+    </div>
+    <script>
+        const colores = ['rojo','azul','blanco','amarillo']
+        let select = document.getElementById('colorSelect')
+        colores.forEach(function(color){
+            let opcion = document.createElement('Option')
+            opcion.text = color
+            opcion.value = color
+            select.add(opcion) 
+        })
+        function cambiarColorA(color) {
+            document.getElementById("cambiar-bocho").src="bocho_"+color+".jpg"
+        }
+    </script>
+    
+</body>
+</html>
